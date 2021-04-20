@@ -1,0 +1,12 @@
+C:\Users\Jun\source\repos\DeD(prova)\DeD(prova)\bin\Debug\DeD(prova).exe.config
+C:\Users\Jun\source\repos\DeD(prova)\DeD(prova)\bin\Debug\DeD(prova).exe
+C:\Users\Jun\source\repos\DeD(prova)\DeD(prova)\bin\Debug\DeD(prova).pdb
+C:\Users\Jun\source\repos\DeD(prova)\DeD(prova)\obj\Debug\DeD(prova).csprojAssemblyReference.cache
+C:\Users\Jun\source\repos\DeD(prova)\DeD(prova)\obj\Debug\DeD_prova_.Properties.Resources.resources
+C:\Users\Jun\source\repos\DeD(prova)\DeD(prova)\obj\Debug\DeD_prova_.TelaInicial.resources
+C:\Users\Jun\source\repos\DeD(prova)\DeD(prova)\obj\Debug\DeD(prova).csproj.GenerateResource.cache
+C:\Users\Jun\source\repos\DeD(prova)\DeD(prova)\obj\Debug\DeD(prova).csproj.CoreCompileInputs.cache
+C:\Users\Jun\source\repos\DeD(prova)\DeD(prova)\obj\Debug\DeD(prova).exe
+C:\Users\Jun\source\repos\DeD(prova)\DeD(prova)\obj\Debug\DeD(prova).pdb
+C:\Users\Jun\source\repos\DeD(prova)\DeD(prova)\obj\Debug\DeD_prova_.TelaStatus.resources
+C:\Users\Jun\source\repos\DeD(prova)\DeD(prova)\obj\Debug\DeD_prova_.Forms.TelaJogo.resources
