@@ -1,4 +1,5 @@
-﻿using DeD_prova_.Forms;
+﻿using DeD_prova_.Classes;
+using DeD_prova_.Forms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,26 +14,44 @@ namespace DeD_prova_
 {
     public partial class TelaStatus : Form
     {
-        Jogador Playerativo;
-        public TelaStatus(Jogador Player)
+        Heroi Playerativo;
+        public TelaStatus(Heroi Player)
         {
             InitializeComponent();
             Playerativo = Player;
             lbl_jogador.Text = "Jogador: "+Player.Nome;
             lbl_level.Text = "Level: "+Player.Level.ToString();
-            lbl_classe.Text = "Classe: "+Player.Classe;
+            lbl_classe.Text = Player.NomeClasse;
+
+            nud_agilidade.Value = 50;
+            nud_defesa.Value = 50;
+            nud_forca.Value = 50;
+            nud_mana.Value = 50;
+            nud_sorte.Value = 50;
+            nud_vida.Value = 50;
         }
 
         private void btn_salvar_Click(object sender, EventArgs e)
         {
-            int ValorPontosTotais = Convert.ToInt32(nud_agilidade.Value) + Convert.ToInt32(nud_defesa.Value) + Convert.ToInt32(nud_forca.Value) + Convert.ToInt32(nud_mana.Value) + Convert.ToInt32(nud_sorte.Value) + Convert.ToInt32(nud_vida.Value);
+            int forca = Convert.ToInt32(nud_forca.Value);
+            int def = Convert.ToInt32(nud_defesa.Value);
+            int agili = Convert.ToInt32(nud_agilidade.Value);
+            int sorte = Convert.ToInt32(nud_sorte.Value);
+            int vida =  Convert.ToInt32(nud_vida.Value);
+            int mana = Convert.ToInt32(nud_mana.Value);
+            int ValorPontosTotais = forca + def + agili + sorte + vida + mana;
+
             if(ValorPontosTotais > 300)
             {
                 MessageBox.Show("O valor distribuído passou de 300 pontos");
             }
+            else if(ValorPontosTotais < 300)
+            {
+                MessageBox.Show("Falta " + (300 - ValorPontosTotais) + " para os 300 pontos");
+            }
             else
             {
-
+                Playerativo.ReceberStatus(forca , def , agili , sorte , vida , mana);
                 this.Hide();
                 TelaJogo form = new TelaJogo(Playerativo);
                 form.Show();

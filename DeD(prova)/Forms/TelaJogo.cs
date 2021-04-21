@@ -1,4 +1,6 @@
-﻿using System;
+﻿using DeD_prova_.Classes;
+using DeD_prova_.Monstros;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,11 +14,61 @@ namespace DeD_prova_.Forms
 {
     public partial class TelaJogo : Form
     {
-        Jogador Playerativo;
-        public TelaJogo(Jogador Player)
+        Heroi Playerativo;
+
+        Monstro monstroativo;
+
+        public void MonstroAleatorio()
+        {
+            Random r = new Random();
+            int monstrotela = r.Next(0, 3);
+            if (monstrotela == 0)
+            {
+                monstroativo = new Slime();
+            }
+            else if (monstrotela == 1)
+            {
+                monstroativo = new Goblin();
+            }
+            else
+            {
+                monstroativo = new Dragao();
+            }
+            pcb_monstro.Image = Image.FromFile(monstroativo.ImagemMonstro);
+            lbl_vidamonstro.Text = "Vida do monstro: " + monstroativo.Status.Vida.ToString();
+        }
+
+        public TelaJogo(Heroi Player)
         {
             InitializeComponent();
             Playerativo = Player;
+            lbl_jogador.Text = "Jogador: " + Player.Nome;
+            lbl_level.Text = "Level: " + Player.Level.ToString();
+            lbl_classe.Text = "Classe: " + Player.NomeClasse;
+
+            lbl_vidaheroi.Text = "Vida do herói: " + Playerativo.Status.Vida;
+            MonstroAleatorio();
+        }
+
+        private void btn_ataque1_Click(object sender, EventArgs e)
+        {
+            Playerativo.Ataque(monstroativo);
+            lbl_vidamonstro.Text = "Vida do monstro: " + monstroativo.Status.Vida.ToString();
+            monstroativo.Ataque(Playerativo);
+            lbl_vidaheroi.Text = "Vida do herói: " + Playerativo.Status.Vida;
+
+            if (monstroativo.Status.Vida < 0)
+            {
+                DialogResult DR = MessageBox.Show(monstroativo.Nome + "está morto! Deseja continuar?", "Aviso", MessageBoxButtons.YesNo);
+                if (DR == DialogResult.Yes)
+                {
+                    MonstroAleatorio();
+                }
+                else
+                {
+                    Application.Exit();
+                }
+            }
         }
     }
 }

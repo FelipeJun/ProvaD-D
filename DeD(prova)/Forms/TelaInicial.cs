@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DeD_prova_.Classes;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,7 +13,7 @@ namespace DeD_prova_
 {
     public partial class TelaInicial : Form
     {
-        public Jogador Player { get; set; }
+        public Heroi Playerativo { get; set; }
         public TelaInicial()
         {
             InitializeComponent();
@@ -22,16 +23,27 @@ namespace DeD_prova_
         {
             try
             {
-                if(txt_nome.Text == "" || txt_nome.Text == " ")
+                if(txt_nome.Text == "")
                 {
                     MessageBox.Show("O nome não pode ser vazio");
                     txt_nome.Text = "";
                 }
                 else
                 {
-                    this.Player = new Jogador(txt_nome.Text, 1, cmb_classe.SelectedItem.ToString());
+                    if(cmb_classe.SelectedItem.ToString() == "Guerreiro") 
+                    {
+                        this.Playerativo = new Guerreiro(txt_nome.Text, 1, "Guerreiro");
+                    }
+                    else if (cmb_classe.SelectedItem.ToString() == "Mago")
+                    {
+                        this.Playerativo = new Mago(txt_nome.Text, 1, "Mago");
+                    }
+                    else
+                    {
+                        this.Playerativo = new Arqueiro(txt_nome.Text, 1, "Arqueiro");
+                    }
                     this.Hide();
-                    TelaStatus form = new TelaStatus(Player);
+                    TelaStatus form = new TelaStatus(Playerativo);
                     form.Show();
                 }
 
