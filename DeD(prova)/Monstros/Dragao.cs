@@ -9,7 +9,7 @@ namespace DeD_prova_.Monstros
 {
     class Dragao : Monstro
     {
-        public Dragao() : base("Dragao", CriaStatus(), "Imagens\\dragao.png")
+        public Dragao() : base("Dragão", CriaStatus(), "Imagens\\dragao.png")
         {
 
         }

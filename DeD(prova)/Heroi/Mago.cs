@@ -20,5 +20,10 @@ namespace DeD_prova_.Classes
             float ataque = (this.Status.Forca + this.Status.Agilidade) * (1 + (rand.Next(0, this.Status.Sorte) / 100));
             monstro.RecebeAtaque(ataque);
         }
+
+        public override void AtaqueEspecial(Monstro monstro)
+        {
+            
+        }
     }
 }

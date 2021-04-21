@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DeD_prova_.Classes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,7 +24,26 @@ namespace DeD_prova_
             this.Sorte = sorte;
             this.Vida = vida;
             this.Mana = mana;
+        }
 
+        public void MelhorarStatus(int niveluppado)
+        {
+            this.Forca += niveluppado;
+            this.Defesa += niveluppado;
+            this.Agilidade += niveluppado;
+            this.Sorte += niveluppado;
+            this.Vida += niveluppado;
+            this.Mana += niveluppado;
+        }
+
+        public static void AdicionarStatusItens(Heroi player, Item item)
+        {
+            player.Status.Forca += item.Status.Forca;
+            player.Status.Defesa += item.Status.Defesa;
+            player.Status.Agilidade += item.Status.Agilidade;
+            player.Status.Sorte += item.Status.Sorte;
+            player.Status.Vida += item.Status.Vida;
+            player.Status.Mana += item.Status.Mana;
         }
     }
 }

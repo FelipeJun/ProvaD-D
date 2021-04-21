@@ -17,8 +17,14 @@ namespace DeD_prova_.Classes
         public override void Ataque(Monstro monstro)
         {
             Random rand = new Random();
-            float ataque = (this.Status.Forca + this.Status.Agilidade) * (1 + (rand.Next(0, this.Status.Sorte) / 100));
+            float sça = rand.Next(0, this.Status.Sorte);
+            float ataque = (this.Status.Forca + this.Status.Agilidade) * (1 + (sça) / 100);
             monstro.RecebeAtaque(ataque);
+        }
+
+        public override void AtaqueEspecial(Monstro monstro)
+        {
+
         }
     }
 }

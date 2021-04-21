@@ -12,6 +12,7 @@ namespace DeD_prova_.Classes
         public int Level { get; set; }
         public Status Status { get; set; }
         public string NomeClasse { get; set; }
+        public Inventario Inventario { get; set; }
 
         public Heroi(string nome, int level,string nomeclasse)
         {
@@ -27,20 +28,44 @@ namespace DeD_prova_.Classes
             return def;
         }
 
-        public abstract void Ataque(Monstro mostro);
+        public abstract void Ataque(Monstro monstro);
+
+        public abstract void AtaqueEspecial(Monstro monstro);
 
         public void ReceberStatus(int forca, int defesa, int agilidade, int sorte, int vida, int mana)
         {
             this.Status = new Status(forca, defesa, agilidade, sorte, vida, mana);
         }
 
-        public void RecebeAtaque(float valordano) //6
+
+        public void RecebeAtaque(float valordano) 
         {
-            float Dano = (valordano/this.Defesa());
-            if (Dano > 0)
+            float Dano = (this.Defesa()/100) - valordano;
+            if (Dano < 0)
             {
-                this.Status.Vida -= Dano;
+                this.Status.Vida += Dano;
             }
+        }
+
+        public static void SubirLevel(Heroi player,Monstro monstro)
+        {
+            if(monstro.Nome == "Slime")
+            {
+                player.Level += 1;
+                player.Status.MelhorarStatus(1);
+                
+            }
+            else if(monstro.Nome == "Goblin")
+            {
+                player.Level += 2;
+                player.Status.MelhorarStatus(2);
+            }
+            else
+            {
+                player.Level += 5;
+                player.Status.MelhorarStatus(5);
+            }
+            System.Windows.Forms.MessageBox.Show("Parabéns!! Você subiu para o nivel " + player.Level);
         }
 
     }

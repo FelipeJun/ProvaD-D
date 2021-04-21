@@ -26,7 +26,9 @@ namespace DeD_prova_
         public float Defesa()
         {
             Random rand = new Random();
-            return (this.Status.Defesa + this.Status.Agilidade) * (1 + (rand.Next(0, this.Status.Sorte) / 100));
+            float sald = rand.Next(0, this.Status.Sorte);
+            float def = (this.Status.Defesa + this.Status.Agilidade) * (1 + (sald) / 100);
+            return def;
         }
 
         public void RecebeAtaque(float valordano)
