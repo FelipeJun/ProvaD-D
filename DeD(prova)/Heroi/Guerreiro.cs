@@ -24,8 +24,17 @@ namespace DeD_prova_.Classes
 
         public override void AtaqueEspecial(Monstro monstro)
         {
-            System.Windows.Forms.MessageBox.Show("Você avança no monstro com seu escudo, atordoando-o!Ele não consegue te atacar por 1 turno");
-            monstro.RecebeAtaque(20);
+            if (this.Status.Mana < 30)
+            {
+                System.Windows.Forms.MessageBox.Show("Mana insuficiente");
+            }
+            else
+            {
+                System.Windows.Forms.MessageBox.Show("Você avança no monstro com seu escudo, atordoando-o!Ele não consegue te atacar por 1 turno");
+                monstro.RecebeAtaque(20);
+                this.Status.Mana -= 30; 
+            }
+
         }
     }
 }

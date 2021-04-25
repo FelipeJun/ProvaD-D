@@ -21,8 +21,17 @@ namespace DeD_prova_.Classes
         }
         public override void AtaqueEspecial(Monstro monstro)
         {
-            System.Windows.Forms.MessageBox.Show("Você Atira uma flecha divina no céu, que cria uma chuva de flechas!!!");
-            monstro.RecebeAtaque(300);
+            if (this.Status.Mana < 50)
+            {
+                System.Windows.Forms.MessageBox.Show("Mana insuficiente");
+            }
+            else
+            {
+                System.Windows.Forms.MessageBox.Show("Você Atira uma flecha divina no céu, que cria uma chuva de flechas!!!");
+                monstro.RecebeAtaque(300);
+                this.Status.Mana -= 50;
+            }
+
         }
     }
 }
