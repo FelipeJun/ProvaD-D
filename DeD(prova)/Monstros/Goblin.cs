@@ -9,7 +9,7 @@ namespace DeD_prova_.Monstros
 {
     class Goblin : Monstro
     {
-        public Goblin() : base("Goblin", CriaStatus(), "Imagens\\goblin.png")
+        public Goblin() : base("Goblin", CriaStatus(), "Imagens\\goblin.png", 50)
         {
 
         }

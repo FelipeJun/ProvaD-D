@@ -21,7 +21,8 @@ namespace DeD_prova_.Classes
         }
         public override void AtaqueEspecial(Monstro monstro)
         {
-
+            System.Windows.Forms.MessageBox.Show("Você Atira uma flecha divina no céu, que cria uma chuva de flechas!!!");
+            monstro.RecebeAtaque(300);
         }
     }
 }

@@ -13,12 +13,15 @@ namespace DeD_prova_.Classes
         public Status Status { get; set; }
         public string NomeClasse { get; set; }
         public Inventario Inventario { get; set; }
+        public int Dinheiro { get; set; }
 
         public Heroi(string nome, int level,string nomeclasse)
         {
             this.Nome = nome;
             this.Level = level;
             this.NomeClasse = nomeclasse;
+            this.Inventario = new Inventario();
+            this.Dinheiro = 0;
         }
 
         public float Defesa()
@@ -43,7 +46,7 @@ namespace DeD_prova_.Classes
             float Dano = (this.Defesa()/100) - valordano;
             if (Dano < 0)
             {
-                this.Status.Vida += Dano;
+                this.Status.Vida += Convert.ToInt32(Dano);
             }
         }
 
@@ -66,6 +69,9 @@ namespace DeD_prova_.Classes
                 player.Status.MelhorarStatus(5);
             }
             System.Windows.Forms.MessageBox.Show("Parabéns!! Você subiu para o nivel " + player.Level);
+            player.Dinheiro += monstro.DropDinheiro;
+            System.Windows.Forms.MessageBox.Show("Monstro dropou " + monstro.DropDinheiro + "!");
+
         }
 
     }

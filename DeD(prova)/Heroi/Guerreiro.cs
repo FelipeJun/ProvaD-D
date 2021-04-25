@@ -24,7 +24,8 @@ namespace DeD_prova_.Classes
 
         public override void AtaqueEspecial(Monstro monstro)
         {
-
+            System.Windows.Forms.MessageBox.Show("Você avança no monstro com seu escudo, atordoando-o!Ele não consegue te atacar por 1 turno");
+            monstro.RecebeAtaque(20);
         }
     }
 }

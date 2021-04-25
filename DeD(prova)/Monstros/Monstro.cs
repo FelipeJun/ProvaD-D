@@ -13,12 +13,14 @@ namespace DeD_prova_
         public string Nome { get; set; }
         public Status Status { get; set; }
         public string ImagemMonstro { get; set; }
+        public int DropDinheiro { get; set; }
 
-        public Monstro(string nome, Status status, string imagem)
+        public Monstro(string nome, Status status, string imagem,int dropdinheiro)
         {
             this.Nome = nome;
             this.Status = status;
             this.ImagemMonstro = imagem;
+            this.DropDinheiro = dropdinheiro;
         }
 
         public abstract void Ataque(Heroi jogador);
@@ -36,7 +38,7 @@ namespace DeD_prova_
             float Dano = this.Defesa() - valordano;
             if (Dano < 0)
             {
-                this.Status.Vida += Dano;
+                this.Status.Vida += Convert.ToInt32(Dano);
             }
         }
     }

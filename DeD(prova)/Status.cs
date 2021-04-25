@@ -13,7 +13,7 @@ namespace DeD_prova_
         public float Defesa { get; set; }
         public float Agilidade { get; set; }
         public int Sorte { get; set; }
-        public float Vida { get; set; }
+        public int Vida { get; set; }
         public float Mana { get; set; }
 
         public Status(int forca, int def, int agi, int sorte, int vida, int mana)

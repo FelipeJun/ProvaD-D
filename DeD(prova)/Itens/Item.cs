@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DeD_prova_
 {
-    public abstract class Item
+    public class Item
     {
         public string NomeItem { get; set; }
         public Status Status { get; set; }

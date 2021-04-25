@@ -8,7 +8,8 @@ namespace DeD_prova_
 {
     public class Inventario
     {
-        public Item esquerda { get; set; }
+        public Item Esquerda { get; set; }
         public Item Direita { get; set; }
+    
     }
 }

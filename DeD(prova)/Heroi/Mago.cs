@@ -23,7 +23,33 @@ namespace DeD_prova_.Classes
 
         public override void AtaqueEspecial(Monstro monstro)
         {
-            
+            if (this.Inventario.Direita.NomeItem == "Cajado Boreal")
+            {
+                if(this.Status.Mana < 20)
+                {
+                    System.Windows.Forms.MessageBox.Show("Mana insuficiente");
+                }
+                else
+                {
+                    System.Windows.Forms.MessageBox.Show("Você se cura, gastando sua mana!");
+                    this.Status.Mana -= 20;
+                    this.Status.Vida += 50;
+                }
+
+            }
+            else
+            {
+                if (this.Status.Mana < 50)
+                {
+                    System.Windows.Forms.MessageBox.Show("Mana insuficiente");
+                }
+                else
+                {
+                    System.Windows.Forms.MessageBox.Show("Você conjura uma magia antiga ancestral, onde você sobe 10 Níveis!!");
+                    this.Status.Mana -= 50;
+                    Status.MelhorarStatus(10);
+                }
+            }
         }
     }
 }

@@ -45,6 +45,9 @@ namespace DeD_prova_.Forms
             this.lbl_jogador = new System.Windows.Forms.Label();
             this.lbl_classe = new System.Windows.Forms.Label();
             this.lbl_vida = new System.Windows.Forms.Label();
+            this.lbl_dinheiro = new System.Windows.Forms.Label();
+            this.btn_pocaomana = new System.Windows.Forms.Button();
+            this.lbl_mana = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lbl_mercado
@@ -63,9 +66,9 @@ namespace DeD_prova_.Forms
             this.btn_espada.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_espada.Location = new System.Drawing.Point(76, 137);
             this.btn_espada.Name = "btn_espada";
-            this.btn_espada.Size = new System.Drawing.Size(119, 66);
+            this.btn_espada.Size = new System.Drawing.Size(153, 66);
             this.btn_espada.TabIndex = 1;
-            this.btn_espada.Text = "Espada";
+            this.btn_espada.Text = "Espada (R$ 50)";
             this.btn_espada.UseVisualStyleBackColor = true;
             this.btn_espada.Click += new System.EventHandler(this.btn_espada_Click);
             // 
@@ -75,10 +78,11 @@ namespace DeD_prova_.Forms
             this.btn_escudo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_escudo.Location = new System.Drawing.Point(76, 232);
             this.btn_escudo.Name = "btn_escudo";
-            this.btn_escudo.Size = new System.Drawing.Size(119, 66);
+            this.btn_escudo.Size = new System.Drawing.Size(153, 66);
             this.btn_escudo.TabIndex = 2;
-            this.btn_escudo.Text = "Escudo";
+            this.btn_escudo.Text = "Escudo (R$50)";
             this.btn_escudo.UseVisualStyleBackColor = true;
+            this.btn_escudo.Click += new System.EventHandler(this.btn_escudo_Click);
             // 
             // label1
             // 
@@ -104,23 +108,25 @@ namespace DeD_prova_.Forms
             // 
             this.btn_arco2.Enabled = false;
             this.btn_arco2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_arco2.Location = new System.Drawing.Point(321, 232);
+            this.btn_arco2.Location = new System.Drawing.Point(305, 232);
             this.btn_arco2.Name = "btn_arco2";
-            this.btn_arco2.Size = new System.Drawing.Size(119, 66);
+            this.btn_arco2.Size = new System.Drawing.Size(153, 66);
             this.btn_arco2.TabIndex = 5;
-            this.btn_arco2.Text = "Arco divino";
+            this.btn_arco2.Text = "Arco divino(R$200)";
             this.btn_arco2.UseVisualStyleBackColor = true;
+            this.btn_arco2.Click += new System.EventHandler(this.btn_arco2_Click);
             // 
             // btn_arco1
             // 
             this.btn_arco1.Enabled = false;
             this.btn_arco1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_arco1.Location = new System.Drawing.Point(321, 137);
+            this.btn_arco1.Location = new System.Drawing.Point(305, 137);
             this.btn_arco1.Name = "btn_arco1";
-            this.btn_arco1.Size = new System.Drawing.Size(119, 66);
+            this.btn_arco1.Size = new System.Drawing.Size(153, 66);
             this.btn_arco1.TabIndex = 4;
-            this.btn_arco1.Text = "Arco boreal";
+            this.btn_arco1.Text = "Arco boreal(R$25)";
             this.btn_arco1.UseVisualStyleBackColor = true;
+            this.btn_arco1.Click += new System.EventHandler(this.btn_arco1_Click);
             // 
             // label3
             // 
@@ -136,41 +142,43 @@ namespace DeD_prova_.Forms
             // 
             this.btn_cajado2.Enabled = false;
             this.btn_cajado2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_cajado2.Location = new System.Drawing.Point(549, 232);
+            this.btn_cajado2.Location = new System.Drawing.Point(515, 232);
             this.btn_cajado2.Name = "btn_cajado2";
-            this.btn_cajado2.Size = new System.Drawing.Size(119, 66);
+            this.btn_cajado2.Size = new System.Drawing.Size(153, 66);
             this.btn_cajado2.TabIndex = 8;
-            this.btn_cajado2.Text = "Cajado de Merlin";
+            this.btn_cajado2.Text = "Cajado de Merlin (R$300)";
             this.btn_cajado2.UseVisualStyleBackColor = true;
+            this.btn_cajado2.Click += new System.EventHandler(this.btn_cajado2_Click);
             // 
             // btn_cajado1
             // 
             this.btn_cajado1.Enabled = false;
             this.btn_cajado1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_cajado1.Location = new System.Drawing.Point(549, 137);
+            this.btn_cajado1.Location = new System.Drawing.Point(515, 137);
             this.btn_cajado1.Name = "btn_cajado1";
-            this.btn_cajado1.Size = new System.Drawing.Size(119, 66);
+            this.btn_cajado1.Size = new System.Drawing.Size(153, 66);
             this.btn_cajado1.TabIndex = 7;
-            this.btn_cajado1.Text = "Cajado boreal";
+            this.btn_cajado1.Text = "Cajado boreal (R$50)";
             this.btn_cajado1.UseVisualStyleBackColor = true;
+            this.btn_cajado1.Click += new System.EventHandler(this.btn_cajado1_Click);
             // 
             // btn_poção
             // 
             this.btn_poção.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_poção.Location = new System.Drawing.Point(76, 335);
             this.btn_poção.Name = "btn_poção";
-            this.btn_poção.Size = new System.Drawing.Size(119, 66);
+            this.btn_poção.Size = new System.Drawing.Size(153, 66);
             this.btn_poção.TabIndex = 10;
-            this.btn_poção.Text = "Poção (+50)";
+            this.btn_poção.Text = "Poção Vida (R$30)";
             this.btn_poção.UseVisualStyleBackColor = true;
             this.btn_poção.Click += new System.EventHandler(this.btn_poção_Click);
             // 
             // btn_sair
             // 
             this.btn_sair.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_sair.Location = new System.Drawing.Point(549, 335);
+            this.btn_sair.Location = new System.Drawing.Point(515, 335);
             this.btn_sair.Name = "btn_sair";
-            this.btn_sair.Size = new System.Drawing.Size(119, 66);
+            this.btn_sair.Size = new System.Drawing.Size(153, 66);
             this.btn_sair.TabIndex = 11;
             this.btn_sair.Text = "Sair";
             this.btn_sair.UseVisualStyleBackColor = true;
@@ -216,11 +224,45 @@ namespace DeD_prova_.Forms
             this.lbl_vida.TabIndex = 23;
             this.lbl_vida.Text = "Vida";
             // 
+            // lbl_dinheiro
+            // 
+            this.lbl_dinheiro.AutoSize = true;
+            this.lbl_dinheiro.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_dinheiro.Location = new System.Drawing.Point(699, 179);
+            this.lbl_dinheiro.Name = "lbl_dinheiro";
+            this.lbl_dinheiro.Size = new System.Drawing.Size(81, 24);
+            this.lbl_dinheiro.TabIndex = 24;
+            this.lbl_dinheiro.Text = "Dinheiro";
+            // 
+            // btn_pocaomana
+            // 
+            this.btn_pocaomana.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_pocaomana.Location = new System.Drawing.Point(305, 335);
+            this.btn_pocaomana.Name = "btn_pocaomana";
+            this.btn_pocaomana.Size = new System.Drawing.Size(153, 66);
+            this.btn_pocaomana.TabIndex = 25;
+            this.btn_pocaomana.Text = "Poção Mana (R$30)";
+            this.btn_pocaomana.UseVisualStyleBackColor = true;
+            this.btn_pocaomana.Click += new System.EventHandler(this.btn_pocaomana_Click);
+            // 
+            // lbl_mana
+            // 
+            this.lbl_mana.AutoSize = true;
+            this.lbl_mana.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_mana.Location = new System.Drawing.Point(700, 146);
+            this.lbl_mana.Name = "lbl_mana";
+            this.lbl_mana.Size = new System.Drawing.Size(48, 24);
+            this.lbl_mana.TabIndex = 26;
+            this.lbl_mana.Text = "Vida";
+            // 
             // Mercado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(886, 450);
+            this.Controls.Add(this.lbl_mana);
+            this.Controls.Add(this.btn_pocaomana);
+            this.Controls.Add(this.lbl_dinheiro);
             this.Controls.Add(this.lbl_vida);
             this.Controls.Add(this.lbl_level);
             this.Controls.Add(this.lbl_jogador);
@@ -263,5 +305,8 @@ namespace DeD_prova_.Forms
         private System.Windows.Forms.Label lbl_jogador;
         private System.Windows.Forms.Label lbl_classe;
         private System.Windows.Forms.Label lbl_vida;
+        private System.Windows.Forms.Label lbl_dinheiro;
+        private System.Windows.Forms.Button btn_pocaomana;
+        private System.Windows.Forms.Label lbl_mana;
     }
 }

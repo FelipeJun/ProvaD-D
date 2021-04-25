@@ -38,12 +38,13 @@ namespace DeD_prova_.Forms
             this.lbl_vidamonstro = new System.Windows.Forms.Label();
             this.lbl_vidaheroi = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.lbl_forca = new System.Windows.Forms.Label();
-            this.lbl_defesa = new System.Windows.Forms.Label();
-            this.lbl_agilidade = new System.Windows.Forms.Label();
-            this.lbl_sorte = new System.Windows.Forms.Label();
-            this.lbl_vida = new System.Windows.Forms.Label();
+            this.lbl_dinheiro = new System.Windows.Forms.Label();
             this.lbl_mana = new System.Windows.Forms.Label();
+            this.lbl_vida = new System.Windows.Forms.Label();
+            this.lbl_sorte = new System.Windows.Forms.Label();
+            this.lbl_agilidade = new System.Windows.Forms.Label();
+            this.lbl_defesa = new System.Windows.Forms.Label();
+            this.lbl_forca = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pcb_monstro)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -93,7 +94,7 @@ namespace DeD_prova_.Forms
             this.btn_ataque1.Name = "btn_ataque1";
             this.btn_ataque1.Size = new System.Drawing.Size(136, 71);
             this.btn_ataque1.TabIndex = 20;
-            this.btn_ataque1.Text = "Ataque 1";
+            this.btn_ataque1.Text = "Socar";
             this.btn_ataque1.UseVisualStyleBackColor = true;
             this.btn_ataque1.Click += new System.EventHandler(this.btn_ataque1_Click);
             // 
@@ -105,6 +106,7 @@ namespace DeD_prova_.Forms
             this.btn_ataque2.TabIndex = 21;
             this.btn_ataque2.Text = "Ataque 2";
             this.btn_ataque2.UseVisualStyleBackColor = true;
+            this.btn_ataque2.Click += new System.EventHandler(this.btn_ataque2_Click);
             // 
             // lbl_vidamonstro
             // 
@@ -128,6 +130,7 @@ namespace DeD_prova_.Forms
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.lbl_dinheiro);
             this.groupBox1.Controls.Add(this.lbl_mana);
             this.groupBox1.Controls.Add(this.lbl_vida);
             this.groupBox1.Controls.Add(this.lbl_sorte);
@@ -144,45 +147,25 @@ namespace DeD_prova_.Forms
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Status";
             // 
-            // lbl_forca
+            // lbl_dinheiro
             // 
-            this.lbl_forca.AutoSize = true;
-            this.lbl_forca.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_forca.Location = new System.Drawing.Point(40, 29);
-            this.lbl_forca.Name = "lbl_forca";
-            this.lbl_forca.Size = new System.Drawing.Size(50, 20);
-            this.lbl_forca.TabIndex = 0;
-            this.lbl_forca.Text = "Força";
+            this.lbl_dinheiro.AutoSize = true;
+            this.lbl_dinheiro.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_dinheiro.Location = new System.Drawing.Point(173, 112);
+            this.lbl_dinheiro.Name = "lbl_dinheiro";
+            this.lbl_dinheiro.Size = new System.Drawing.Size(49, 20);
+            this.lbl_dinheiro.TabIndex = 20;
+            this.lbl_dinheiro.Text = "Mana";
             // 
-            // lbl_defesa
+            // lbl_mana
             // 
-            this.lbl_defesa.AutoSize = true;
-            this.lbl_defesa.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_defesa.Location = new System.Drawing.Point(40, 58);
-            this.lbl_defesa.Name = "lbl_defesa";
-            this.lbl_defesa.Size = new System.Drawing.Size(61, 20);
-            this.lbl_defesa.TabIndex = 1;
-            this.lbl_defesa.Text = "Defesa";
-            // 
-            // lbl_agilidade
-            // 
-            this.lbl_agilidade.AutoSize = true;
-            this.lbl_agilidade.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_agilidade.Location = new System.Drawing.Point(40, 83);
-            this.lbl_agilidade.Name = "lbl_agilidade";
-            this.lbl_agilidade.Size = new System.Drawing.Size(74, 20);
-            this.lbl_agilidade.TabIndex = 2;
-            this.lbl_agilidade.Text = "Agilidade";
-            // 
-            // lbl_sorte
-            // 
-            this.lbl_sorte.AutoSize = true;
-            this.lbl_sorte.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_sorte.Location = new System.Drawing.Point(40, 112);
-            this.lbl_sorte.Name = "lbl_sorte";
-            this.lbl_sorte.Size = new System.Drawing.Size(48, 20);
-            this.lbl_sorte.TabIndex = 3;
-            this.lbl_sorte.Text = "Sorte";
+            this.lbl_mana.AutoSize = true;
+            this.lbl_mana.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_mana.Location = new System.Drawing.Point(173, 58);
+            this.lbl_mana.Name = "lbl_mana";
+            this.lbl_mana.Size = new System.Drawing.Size(49, 20);
+            this.lbl_mana.TabIndex = 5;
+            this.lbl_mana.Text = "Mana";
             // 
             // lbl_vida
             // 
@@ -194,15 +177,45 @@ namespace DeD_prova_.Forms
             this.lbl_vida.TabIndex = 4;
             this.lbl_vida.Text = "Vida";
             // 
-            // lbl_mana
+            // lbl_sorte
             // 
-            this.lbl_mana.AutoSize = true;
-            this.lbl_mana.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_mana.Location = new System.Drawing.Point(173, 58);
-            this.lbl_mana.Name = "lbl_mana";
-            this.lbl_mana.Size = new System.Drawing.Size(49, 20);
-            this.lbl_mana.TabIndex = 5;
-            this.lbl_mana.Text = "Mana";
+            this.lbl_sorte.AutoSize = true;
+            this.lbl_sorte.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_sorte.Location = new System.Drawing.Point(40, 112);
+            this.lbl_sorte.Name = "lbl_sorte";
+            this.lbl_sorte.Size = new System.Drawing.Size(48, 20);
+            this.lbl_sorte.TabIndex = 3;
+            this.lbl_sorte.Text = "Sorte";
+            // 
+            // lbl_agilidade
+            // 
+            this.lbl_agilidade.AutoSize = true;
+            this.lbl_agilidade.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_agilidade.Location = new System.Drawing.Point(40, 83);
+            this.lbl_agilidade.Name = "lbl_agilidade";
+            this.lbl_agilidade.Size = new System.Drawing.Size(74, 20);
+            this.lbl_agilidade.TabIndex = 2;
+            this.lbl_agilidade.Text = "Agilidade";
+            // 
+            // lbl_defesa
+            // 
+            this.lbl_defesa.AutoSize = true;
+            this.lbl_defesa.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_defesa.Location = new System.Drawing.Point(40, 58);
+            this.lbl_defesa.Name = "lbl_defesa";
+            this.lbl_defesa.Size = new System.Drawing.Size(61, 20);
+            this.lbl_defesa.TabIndex = 1;
+            this.lbl_defesa.Text = "Defesa";
+            // 
+            // lbl_forca
+            // 
+            this.lbl_forca.AutoSize = true;
+            this.lbl_forca.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_forca.Location = new System.Drawing.Point(40, 29);
+            this.lbl_forca.Name = "lbl_forca";
+            this.lbl_forca.Size = new System.Drawing.Size(50, 20);
+            this.lbl_forca.TabIndex = 0;
+            this.lbl_forca.Text = "Força";
             // 
             // TelaJogo
             // 
@@ -218,6 +231,7 @@ namespace DeD_prova_.Forms
             this.Name = "TelaJogo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Jogo";
+            this.Load += new System.EventHandler(this.TelaJogo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pcb_monstro)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -243,5 +257,6 @@ namespace DeD_prova_.Forms
         private System.Windows.Forms.Label lbl_agilidade;
         private System.Windows.Forms.Label lbl_defesa;
         private System.Windows.Forms.Label lbl_forca;
+        private System.Windows.Forms.Label lbl_dinheiro;
     }
 }

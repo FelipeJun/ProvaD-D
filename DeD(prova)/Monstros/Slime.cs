@@ -10,7 +10,7 @@ namespace DeD_prova_.Monstros
 {
     class Slime : Monstro
     {
-        public Slime() : base("Slime", CriaStatus(), "Imagens\\slime.png")
+        public Slime() : base("Slime", CriaStatus(), "Imagens\\slime.png",15)
         {
             
         }
