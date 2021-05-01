@@ -27,6 +27,7 @@ namespace DeD_prova_.Forms
             lbl_dinheiro.Text = "R$" + Playerativo.Dinheiro + ",00";
             lbl_mana.Text = "Mana: " + Playerativo.Status.Mana;
             VerificarClasse(Playerativo.NomeClasse);
+            //teste
         }
 
         public void VerificarClasse(string classe)
